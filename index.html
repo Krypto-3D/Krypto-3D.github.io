@@ -7,58 +7,195 @@
     <title>Krypto-3D Maker Chip</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #101114;
+            padding: 22px;
+
+            background:
+                radial-gradient(circle at 20% 15%, rgba(255, 55, 35, 0.14), transparent 35%),
+                radial-gradient(circle at 80% 85%, rgba(0, 220, 255, 0.12), transparent 35%),
+                #08090b;
+
             color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         .card {
-            width: 85%;
-            max-width: 420px;
-            padding: 40px 20px;
-            border: 1px solid #333;
-            border-radius: 25px;
-            background: #18191d;
+            position: relative;
+            width: 100%;
+            max-width: 430px;
+            padding: 42px 24px 36px;
+
+            background: rgba(18, 20, 24, 0.96);
+
+            border: 1px solid rgba(255, 70, 45, 0.65);
+            border-radius: 28px;
+
+            text-align: center;
+
+            box-shadow:
+                0 0 18px rgba(255, 55, 30, 0.30),
+                0 0 45px rgba(255, 55, 30, 0.10),
+                inset 0 0 25px rgba(255,255,255,0.025);
         }
 
-        .small {
-            color: #999;
-            letter-spacing: 3px;
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            border-radius: 28px;
+            pointer-events: none;
+
+            background: linear-gradient(
+                135deg,
+                rgba(255, 65, 35, 0.9),
+                rgba(255, 65, 35, 0.05),
+                rgba(0, 220, 255, 0.65)
+            );
+
+            padding: 1px;
+
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .brand {
             font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 5px;
+
+            color: #ff4933;
+
+            text-shadow:
+                0 0 8px rgba(255, 73, 51, 0.9),
+                0 0 18px rgba(255, 73, 51, 0.5);
         }
 
         h1 {
-            margin-bottom: 5px;
-        }
-
-        .number {
-            font-size: 64px;
-            font-weight: bold;
-            margin-top: 35px;
-        }
-
-        .total {
-            font-size: 24px;
-            color: #aaa;
-        }
-
-        .version {
-            margin-top: 35px;
-            font-size: 18px;
+            margin: 10px 0 0;
+            font-size: 31px;
             letter-spacing: 2px;
         }
 
+        .subtitle {
+            margin-top: 8px;
+            color: #8f979f;
+            font-size: 12px;
+            letter-spacing: 3px;
+        }
+
+        .divider {
+            width: 90px;
+            height: 2px;
+            margin: 30px auto;
+
+            background: linear-gradient(
+                90deg,
+                #ff4933,
+                #00dff5
+            );
+
+            box-shadow:
+                0 0 10px rgba(255, 73, 51, 0.7),
+                0 0 10px rgba(0, 223, 245, 0.5);
+        }
+
+        .number {
+            font-size: 82px;
+            line-height: 0.95;
+            font-weight: 900;
+            letter-spacing: 2px;
+
+            color: white;
+
+            text-shadow:
+                3px 3px 0 rgba(255, 60, 35, 0.45),
+                -2px -1px 0 rgba(0, 215, 240, 0.35);
+        }
+
+        .total {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #a5abb2;
+        }
+
+        .total span {
+            color: #00dff5;
+
+            text-shadow:
+                0 0 8px rgba(0, 223, 245, 0.75);
+        }
+
+        .version {
+            display: inline-block;
+
+            margin-top: 34px;
+            padding: 9px 18px;
+
+            border: 1px solid rgba(255, 73, 51, 0.75);
+            border-radius: 100px;
+
+            color: #ff5a43;
+
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 3px;
+
+            box-shadow:
+                0 0 12px rgba(255, 73, 51, 0.18);
+        }
+
+        .serial-label {
+            margin-top: 28px;
+
+            color: #636b73;
+
+            font-size: 10px;
+            letter-spacing: 3px;
+        }
+
         .serial {
-            margin-top: 15px;
-            color: #888;
+            margin-top: 8px;
+
+            color: #d9dde0;
+
             font-family: monospace;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+
+        .limited {
+            margin-top: 28px;
+
+            color: #00dff5;
+
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+
+            text-shadow:
+                0 0 8px rgba(0, 223, 245, 0.45);
+        }
+
+        .footer {
+            margin-top: 32px;
+
+            color: #50565c;
+
+            font-size: 10px;
+            letter-spacing: 2px;
         }
     </style>
 </head>
@@ -67,22 +204,42 @@
 
 <div class="card">
 
-    <div class="small">KRYPTО-3D</div>
+    <div class="brand">KRYPTO-3D</div>
 
-    <h1>Maker Chip</h1>
+    <h1>MAKER CHIP</h1>
 
-    <div class="number" id="number">001</div>
+    <div class="subtitle">
+        LIMITED MAKER SERIES
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="number" id="number">
+        001
+    </div>
 
     <div class="total">
-        von <span id="total">025</span>
+        OF <span id="total">025</span>
     </div>
 
     <div class="version">
         VERSION <span id="version">1</span>
     </div>
 
+    <div class="serial-label">
+        SERIAL NUMBER
+    </div>
+
     <div class="serial" id="serial">
         KMC-V01-001
+    </div>
+
+    <div class="limited">
+        ◈ ORIGINAL MAKER CHIP ◈
+    </div>
+
+    <div class="footer">
+        KRYPTO-3D • 2026
     </div>
 
 </div>
@@ -95,23 +252,35 @@
     const version = parseInt(params.get("v")) || 1;
     const number = parseInt(params.get("nr")) || 1;
 
-    // Anzahl der Chips pro Version
     const versionTotals = {
         1: 25
     };
 
     const total = versionTotals[version] || 25;
 
-    const formattedNumber = String(number).padStart(3, "0");
-    const formattedTotal = String(total).padStart(3, "0");
-    const formattedVersion = String(version).padStart(2, "0");
+    const formattedNumber =
+        String(number).padStart(3, "0");
 
-    document.getElementById("number").textContent = formattedNumber;
-    document.getElementById("total").textContent = formattedTotal;
-    document.getElementById("version").textContent = version;
+    const formattedTotal =
+        String(total).padStart(3, "0");
+
+    const formattedVersion =
+        String(version).padStart(2, "0");
+
+    document.getElementById("number").textContent =
+        formattedNumber;
+
+    document.getElementById("total").textContent =
+        formattedTotal;
+
+    document.getElementById("version").textContent =
+        version;
 
     document.getElementById("serial").textContent =
-        "KMC-V" + formattedVersion + "-" + formattedNumber;
+        "KMC-V" +
+        formattedVersion +
+        "-" +
+        formattedNumber;
 
 </script>
 
