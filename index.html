@@ -3,11 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krypto Maker Chip</title>
+
+    <title>Krypto-3D Maker Chip</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #101114;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .card {
+            width: 85%;
+            max-width: 420px;
+            padding: 40px 20px;
+            border: 1px solid #333;
+            border-radius: 25px;
+            background: #18191d;
+        }
+
+        .small {
+            color: #999;
+            letter-spacing: 3px;
+            font-size: 14px;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+        }
+
+        .number {
+            font-size: 64px;
+            font-weight: bold;
+            margin-top: 35px;
+        }
+
+        .total {
+            font-size: 24px;
+            color: #aaa;
+        }
+
+        .version {
+            margin-top: 35px;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+
+        .serial {
+            margin-top: 15px;
+            color: #888;
+            font-family: monospace;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Krypto Maker Chip</h1>
-    <p>Die Seite funktioniert! 🪙📡</p>
+
+<div class="card">
+
+    <div class="small">KRYPTО-3D</div>
+
+    <h1>Maker Chip</h1>
+
+    <div class="number" id="number">001</div>
+
+    <div class="total">
+        von <span id="total">025</span>
+    </div>
+
+    <div class="version">
+        VERSION <span id="version">1</span>
+    </div>
+
+    <div class="serial" id="serial">
+        KMC-V01-001
+    </div>
+
+</div>
+
+
+<script>
+
+    const params = new URLSearchParams(window.location.search);
+
+    const version = parseInt(params.get("v")) || 1;
+    const number = parseInt(params.get("nr")) || 1;
+
+    // Anzahl der Chips pro Version
+    const versionTotals = {
+        1: 25
+    };
+
+    const total = versionTotals[version] || 25;
+
+    const formattedNumber = String(number).padStart(3, "0");
+    const formattedTotal = String(total).padStart(3, "0");
+    const formattedVersion = String(version).padStart(2, "0");
+
+    document.getElementById("number").textContent = formattedNumber;
+    document.getElementById("total").textContent = formattedTotal;
+    document.getElementById("version").textContent = version;
+
+    document.getElementById("serial").textContent =
+        "KMC-V" + formattedVersion + "-" + formattedNumber;
+
+</script>
+
 </body>
 </html>
