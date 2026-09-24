@@ -9,10 +9,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        Gewinner Coin | Sonderedition
-    </title>
-
+    <title>Gewinner Coin | Sonderedition</title>
 
     <style>
 
@@ -20,17 +17,13 @@
             box-sizing: border-box;
         }
 
-
         html {
             background: #050606;
         }
 
-
         body {
             margin: 0;
-
             min-height: 100vh;
-
             padding: 18px;
 
             font-family:
@@ -41,16 +34,15 @@
             color: white;
 
             background:
-
                 radial-gradient(
-                    circle at 15% 10%,
-                    rgba(255, 125, 25, 0.18),
+                    circle at 15% 12%,
+                    rgba(255, 120, 20, 0.18),
                     transparent 30%
                 ),
 
                 radial-gradient(
-                    circle at 85% 70%,
-                    rgba(135, 255, 65, 0.16),
+                    circle at 85% 72%,
+                    rgba(135, 255, 55, 0.16),
                     transparent 32%
                 ),
 
@@ -62,27 +54,22 @@
         }
 
 
-
         /* =========================
-           SEITE
-        ========================== */
+           GESAMTE SEITE
+        ========================= */
 
         .page {
             width: 100%;
-
             max-width: 470px;
-
             margin: 0 auto;
         }
 
 
-
         /* =========================
            LOGOS OBEN
-        ========================== */
+        ========================= */
 
         .logos {
-
             display: grid;
 
             grid-template-columns:
@@ -95,13 +82,12 @@
             margin:
                 6px
                 0
-                28px;
+                25px;
         }
 
 
         .logo-box {
-
-            height: 76px;
+            height: 74px;
 
             padding: 8px;
 
@@ -111,25 +97,30 @@
 
             justify-content: center;
 
-            border-radius: 17px;
+            border-radius: 16px;
 
-            background:
-                rgba(255,255,255,0.96);
+            overflow: hidden;
 
             border:
                 1px solid
-                rgba(255,255,255,0.15);
+                rgba(255,255,255,0.10);
+        }
 
-            overflow: hidden;
+
+        .printethub-box {
+            background: #050505;
+        }
+
+
+        .recycling-box {
+            background: rgba(255,255,255,0.96);
         }
 
 
         .logo-box img {
-
             display: block;
 
             width: 100%;
-
             height: 100%;
 
             object-fit: contain;
@@ -137,71 +128,62 @@
 
 
         .cross {
+            color: #aaa;
 
             font-size: 25px;
-
             font-weight: 300;
-
-            color: #9ca1a6;
         }
 
 
-
         /* =========================
-           TITEL
-        ========================== */
+           ÜBERSCHRIFT
+        ========================= */
 
         .hero {
-
             text-align: center;
         }
 
 
         .edition {
+            color: #ff9b37;
 
             font-size: 11px;
-
             font-weight: bold;
 
             letter-spacing: 5px;
-
-            color: #ff9b37;
 
             margin-bottom: 10px;
         }
 
 
         .edition-line {
-
-            width: 110px;
-
+            width: 115px;
             height: 2px;
 
             margin:
                 0 auto
-                12px;
+                13px;
 
             border-radius: 10px;
 
             background:
                 linear-gradient(
                     90deg,
-                    #ff8d2c,
-                    #a8ff58
+                    #ff8b2d,
+                    #ffd168,
+                    #a4ff54
                 );
 
             box-shadow:
                 0 0 12px
-                rgba(255, 150, 40, 0.45);
+                rgba(255, 150, 40, 0.38);
         }
 
 
         h1 {
-
             margin: 0;
 
             font-size: 41px;
-
             line-height: 1;
 
             font-weight: 900;
@@ -211,50 +193,43 @@
             background:
                 linear-gradient(
                     90deg,
-                    #ff9130 0%,
-                    #ffc967 42%,
-                    #b8ff69 100%
+                    #ff8c2d 0%,
+                    #ffd36d 45%,
+                    #a7ff57 100%
                 );
 
             -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
 
-            -webkit-text-fill-color:
-                transparent;
+            text-shadow:
+                0 0 25px
+                rgba(255,145,35,0.10);
         }
 
 
-
         /* =========================
-           COIN BEREICH
-        ========================== */
+           COIN-GRAFIK
+        ========================= */
 
-        .coin-stage {
-
+        .coin-image-wrap {
             position: relative;
 
-            margin:
-                30px
-                auto
-                0;
+            margin-top: 24px;
 
             text-align: center;
         }
 
 
-
-        /* Glow hinter dem Coin */
-
-        .coin-glow {
+        .coin-image-wrap::before {
+            content: "";
 
             position: absolute;
 
-            width: 260px;
-
-            height: 260px;
+            width: 280px;
+            height: 280px;
 
             left: 50%;
-
-            top: 0;
+            top: 25px;
 
             transform:
                 translateX(-50%);
@@ -264,297 +239,62 @@
             background:
                 linear-gradient(
                     90deg,
-                    rgba(255,120,25,0.25),
-                    rgba(130,255,55,0.20)
+                    rgba(255, 118, 20, 0.18),
+                    rgba(140, 255, 55, 0.16)
                 );
 
-            filter: blur(40px);
-
-            opacity: 0.65;
+            filter: blur(45px);
 
             pointer-events: none;
         }
 
 
-
-        /* EIGENTLICHER COIN */
-
-        .coin {
-
+        .coin-image {
             position: relative;
 
-            width: 230px;
+            width: 100%;
+            max-width: 350px;
 
-            height: 230px;
+            height: auto;
+
+            display: block;
 
             margin: 0 auto;
 
-            border-radius: 50%;
-
-            padding: 12px;
-
-            background:
-
-                linear-gradient(
-                    145deg,
-                    #ffd36a,
-                    #6e4810 24%,
-                    #e2a83f 45%,
-                    #4b3008 62%,
-                    #ffca58
-                );
-
-            box-shadow:
-
-                -18px 0 35px
-                rgba(255, 126, 20, 0.25),
-
-                18px 0 35px
-                rgba(136, 255, 55, 0.22),
-
-                0 15px 35px
-                rgba(0,0,0,0.7);
-        }
-
-
-
-        .coin-face {
-
-            width: 100%;
-
-            height: 100%;
-
-            border-radius: 50%;
-
-            position: relative;
-
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: center;
-
-            justify-content: center;
-
-            overflow: hidden;
-
-            background:
-
-                radial-gradient(
-                    circle at 35% 25%,
-                    #34383b,
-                    #121415 48%,
-                    #070808 78%
-                );
-
-            border:
-                2px solid
-                rgba(255,220,130,0.45);
-
-            box-shadow:
-
-                inset 0 0 30px
-                rgba(0,0,0,0.8),
-
-                inset -12px 0 22px
-                rgba(120,255,50,0.07),
-
-                inset 12px 0 22px
-                rgba(255,110,20,0.08);
-        }
-
-
-
-        /* Coin-Ringe */
-
-        .coin-face::before {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 13px;
-
-            border-radius: 50%;
-
-            border:
-                1px solid
-                rgba(255, 208, 105, 0.30);
-
-            pointer-events: none;
-        }
-
-
-        .coin-face::after {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 22px;
-
-            border-radius: 50%;
-
-            border:
-                1px dashed
-                rgba(255,255,255,0.10);
-
-            pointer-events: none;
-        }
-
-
-
-        /* Coin Inhalt */
-
-        .coin-brand-top {
-
-            position: relative;
-
-            z-index: 2;
-
-            font-size: 20px;
-
-            font-weight: 900;
-
-            letter-spacing: 0.5px;
-
-            margin-bottom: 7px;
-        }
-
-
-        .coin-brand-top .orange {
-
-            color: #ff963b;
-        }
-
-
-        .coin-trophy {
-
-            position: relative;
-
-            z-index: 2;
-
-            font-size: 43px;
-
-            line-height: 1;
-
-            margin:
-                3px
-                0
-                4px;
-
             filter:
                 drop-shadow(
-                    0 0 9px
-                    rgba(255,190,60,0.4)
+                    -12px 0 22px
+                    rgba(255, 115, 20, 0.18)
+                )
+
+                drop-shadow(
+                    12px 0 22px
+                    rgba(135, 255, 55, 0.16)
                 );
         }
-
-
-        .coin-winner {
-
-            position: relative;
-
-            z-index: 2;
-
-            color: #ffffff;
-
-            font-size: 15px;
-
-            font-weight: 900;
-
-            letter-spacing: 2px;
-        }
-
-
-        .coin-number {
-
-            position: relative;
-
-            z-index: 2;
-
-            margin-top: 4px;
-
-            color: #a8ff54;
-
-            font-size: 24px;
-
-            font-weight: 900;
-
-            text-shadow:
-                0 0 10px
-                rgba(155,255,70,0.55);
-        }
-
-
-        .coin-brand-bottom {
-
-            position: relative;
-
-            z-index: 2;
-
-            margin-top: 7px;
-
-            color: #9dff52;
-
-            font-size: 13px;
-
-            font-weight: bold;
-        }
-
-
-
-        /* Sockel */
-
-        .pedestal {
-
-            width: 260px;
-
-            height: 19px;
-
-            margin:
-                -5px
-                auto
-                0;
-
-            border-radius: 50%;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #ff842b,
-                    #64542d,
-                    #98ff4d
-                );
-
-            box-shadow:
-                0 0 20px
-                rgba(165,255,75,0.18);
-        }
-
 
 
         /* =========================
-           1 VON 5
-        ========================== */
+           GEWINNERNUMMER
+        ========================= */
 
         .winner-info {
-
-            margin-top: 23px;
+            margin-top: 10px;
 
             text-align: center;
         }
 
 
         .winner-pill {
+            display: inline-flex;
 
-            display: inline-block;
+            align-items: center;
 
-            min-width: 150px;
+            gap: 11px;
 
             padding:
-                12px
-                22px;
+                11px
+                21px;
 
             border-radius: 18px;
 
@@ -563,27 +303,34 @@
 
             border:
                 1px solid
-                rgba(255,207,105,0.55);
+                rgba(255, 207, 105, 0.55);
 
             box-shadow:
-                0 0 20px
+                0 0 19px
                 rgba(255,145,40,0.12);
         }
 
 
+        .trophy {
+            font-size: 24px;
+        }
+
+
+        .winner-text {
+            text-align: left;
+        }
+
+
         .winner-number {
-
-            font-size: 23px;
-
+            font-size: 22px;
             font-weight: 900;
         }
 
 
         .winner-label {
+            margin-top: 2px;
 
-            margin-top: 3px;
-
-            color: #aeb3b7;
+            color: #b2b6ba;
 
             font-size: 9px;
 
@@ -592,7 +339,6 @@
 
 
         .serial {
-
             display: inline-block;
 
             margin-top: 10px;
@@ -604,13 +350,13 @@
             border-radius: 10px;
 
             background:
-                rgba(0,0,0,0.38);
+                rgba(0,0,0,0.40);
 
             border:
                 1px solid
-                rgba(255,255,255,0.12);
+                rgba(255,255,255,0.13);
 
-            color: #d4d8db;
+            color: #d4d8dc;
 
             font-family: monospace;
 
@@ -620,14 +366,12 @@
         }
 
 
-
         /* =========================
            GEWINNKARTE
-        ========================== */
+        ========================= */
 
         .prize-card {
-
-            margin-top: 26px;
+            margin-top: 25px;
 
             padding:
                 27px
@@ -636,24 +380,21 @@
 
             text-align: center;
 
-            border-radius: 26px;
+            border-radius: 27px;
 
             background:
-
                 linear-gradient(
                     135deg,
-                    rgba(255,130,30,0.06),
-                    rgba(145,255,65,0.055)
+                    rgba(255,125,25,0.055),
+                    rgba(145,255,60,0.055)
                 ),
-
-                rgba(17,19,20,0.97);
+                rgba(17,19,20,0.98);
 
             border:
                 1px solid
-                rgba(155,255,70,0.25);
+                rgba(155,255,70,0.26);
 
             box-shadow:
-
                 -12px 0 28px
                 rgba(255,120,25,0.08),
 
@@ -663,17 +404,23 @@
 
 
         .congrats {
-
             margin: 0;
 
-            font-size: 37px;
-
+            font-size: 38px;
             font-weight: 900;
         }
 
 
-        .prize-text {
+        .spark {
+            color: #a8ff55;
 
+            text-shadow:
+                0 0 12px
+                rgba(150,255,65,0.7);
+        }
+
+
+        .prize-text {
             margin-top: 11px;
 
             font-size: 21px;
@@ -685,8 +432,7 @@
 
 
         .green {
-
-            color: #a6ff59;
+            color: #a7ff58;
 
             text-shadow:
                 0 0 8px
@@ -695,16 +441,14 @@
 
 
         .orange {
-
-            color: #ff983c;
+            color: #ff963a;
         }
 
 
         .rarity {
-
             margin-top: 11px;
 
-            color: #b2b8bd;
+            color: #b4b9bd;
 
             font-size: 14px;
 
@@ -712,64 +456,98 @@
         }
 
 
-
         /* =========================
            FILAMENTSPULE
-        ========================== */
+        ========================= */
 
-        .spool {
-
-            width: 150px;
-
-            height: 105px;
-
-            margin:
-                24px
-                auto
-                4px;
-
+        .spool-box {
             position: relative;
+
+            margin-top: 20px;
+
+            padding: 18px;
+
+            height: 145px;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(140,255,60,0.10),
+                    transparent 55%
+                ),
+                rgba(0,0,0,0.26);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
         }
 
 
-        .spool-core {
-
+        .spool-glow {
             position: absolute;
 
-            width: 112px;
+            width: 160px;
+            height: 80px;
 
-            height: 72px;
+            border-radius: 50%;
 
-            left: 19px;
+            background:
+                rgba(130,255,55,0.18);
 
-            top: 16px;
+            filter: blur(28px);
+        }
+
+
+        .spool {
+            position: relative;
+
+            width: 145px;
+            height: 95px;
+        }
+
+
+        .filament {
+            position: absolute;
+
+            width: 105px;
+            height: 65px;
+
+            left: 20px;
+            top: 15px;
 
             border-radius: 8px;
 
             background:
-
                 repeating-linear-gradient(
                     0deg,
-                    #69ca27,
-                    #69ca27 4px,
-                    #a0f64e 5px,
-                    #a0f64e 8px
+                    #65c925,
+                    #65c925 4px,
+                    #9cff4b 5px,
+                    #9cff4b 8px
                 );
 
             box-shadow:
                 0 0 22px
-                rgba(130,255,55,0.3);
+                rgba(130,255,55,0.35);
         }
 
 
         .spool-top,
         .spool-bottom {
-
             position: absolute;
 
-            width: 150px;
-
-            height: 30px;
+            width: 145px;
+            height: 28px;
 
             left: 0;
 
@@ -778,14 +556,14 @@
             background:
                 radial-gradient(
                     ellipse,
-                    #404548 0%,
-                    #191b1c 58%,
-                    #080909 100%
+                    #3d4245,
+                    #161819 60%,
+                    #070808
                 );
 
             border:
                 1px solid
-                rgba(255,255,255,0.13);
+                rgba(255,255,255,0.12);
         }
 
 
@@ -800,37 +578,32 @@
 
 
         .spool-hole {
-
             position: absolute;
 
-            z-index: 3;
+            z-index: 5;
 
-            width: 32px;
+            width: 31px;
+            height: 31px;
 
-            height: 32px;
+            left: 57px;
+            top: 0;
 
             border-radius: 50%;
 
-            background: #090a0a;
+            background: #070808;
 
             border:
                 5px solid
                 #303436;
-
-            left: 59px;
-
-            top: 0;
         }
 
 
-
         /* =========================
-           EINLÖSEINFO
-        ========================== */
+           INFOTEXT
+        ========================= */
 
         .info {
-
-            margin-top: 23px;
+            margin-top: 21px;
 
             padding:
                 17px
@@ -844,7 +617,7 @@
 
             font-size: 15px;
 
-            line-height: 1.5;
+            line-height: 1.55;
 
             background:
                 rgba(255,255,255,0.035);
@@ -855,19 +628,25 @@
         }
 
 
-        .info strong {
+        .info-icon {
+            color: #ff9938;
 
-            color: #a5ff58;
+            font-size: 20px;
+
+            margin-right: 6px;
         }
 
+
+        .info strong {
+            color: #a4ff55;
+        }
 
 
         /* =========================
            BUTTON
-        ========================== */
+        ========================= */
 
         .redeem {
-
             width: 100%;
 
             margin-top: 20px;
@@ -882,43 +661,38 @@
 
             cursor: pointer;
 
+            color: #101210;
+
             font-size: 17px;
 
             font-weight: 900;
 
-            letter-spacing: 0.5px;
-
-            color: #101210;
+            letter-spacing: 0.4px;
 
             background:
-
                 linear-gradient(
                     90deg,
-                    #ff9236,
-                    #ffd069 43%,
-                    #9dff51
+                    #ff9237 0%,
+                    #ffd069 47%,
+                    #9dff52 100%
                 );
 
             box-shadow:
-                0 0 24px
+                0 0 25px
                 rgba(155,255,75,0.18);
         }
 
 
         .redeem:active {
-
-            transform:
-                scale(0.98);
+            transform: scale(0.98);
         }
-
 
 
         /* =========================
            EINLÖSEDETAILS
-        ========================== */
+        ========================= */
 
         #redeemDetails {
-
             display: none;
 
             margin-top: 15px;
@@ -929,11 +703,11 @@
 
             border-radius: 17px;
 
-            color: #e3e6e8;
+            color: #e1e5e7;
 
             font-size: 14px;
 
-            line-height: 1.55;
+            line-height: 1.6;
 
             background:
                 rgba(140,255,65,0.07);
@@ -945,18 +719,35 @@
 
 
         #redeemDetails strong {
-
-            color: #a6ff59;
+            color: #a5ff58;
         }
 
+
+        .redeem-id {
+            display: inline-block;
+
+            margin-top: 8px;
+
+            padding:
+                7px
+                13px;
+
+            border-radius: 9px;
+
+            background:
+                rgba(0,0,0,0.35);
+
+            font-family: monospace;
+
+            letter-spacing: 2px;
+        }
 
 
         /* =========================
            FOOTER
-        ========================== */
+        ========================= */
 
         .footer {
-
             margin:
                 20px
                 0
@@ -964,7 +755,7 @@
 
             text-align: center;
 
-            color: #686e72;
+            color: #676d72;
 
             font-size: 9px;
 
@@ -974,10 +765,9 @@
         }
 
 
-
         /* =========================
            KLEINE HANDYS
-        ========================== */
+        ========================= */
 
         @media (max-width: 390px) {
 
@@ -985,30 +775,24 @@
                 padding: 13px;
             }
 
-
             .logo-box {
-                height: 65px;
+                height: 64px;
             }
-
 
             h1 {
                 font-size: 35px;
             }
 
-
-            .coin {
-                width: 205px;
-                height: 205px;
+            .coin-image {
+                max-width: 320px;
             }
-
-
-            .pedestal {
-                width: 230px;
-            }
-
 
             .congrats {
                 font-size: 32px;
+            }
+
+            .prize-text {
+                font-size: 19px;
             }
 
         }
@@ -1018,20 +802,25 @@
 </head>
 
 
-
 <body>
 
 
 <div class="page">
 
 
-
-    <!-- LOGOS -->
+    <!-- =========================
+         LOGOS
+    ========================== -->
 
     <div class="logos">
 
 
-        <div class="logo-box">
+        <div
+            class="
+                logo-box
+                printethub-box
+            "
+        >
 
             <img
                 src="printethub.jpeg"
@@ -1041,14 +830,17 @@
         </div>
 
 
-
         <div class="cross">
             ×
         </div>
 
 
-
-        <div class="logo-box">
+        <div
+            class="
+                logo-box
+                recycling-box
+            "
+        >
 
             <img
                 src="recyclingfabrik.jpeg"
@@ -1062,7 +854,9 @@
 
 
 
-    <!-- HERO -->
+    <!-- =========================
+         TITEL
+    ========================== -->
 
     <div class="hero">
 
@@ -1084,66 +878,44 @@
 
 
 
-    <!-- COIN -->
+    <!-- =========================
+         COIN-GRAFIK
+    ========================== -->
 
-    <div class="coin-stage">
-
-
-        <div class="coin-glow"></div>
-
-
-        <div class="coin">
+    <div class="coin-image-wrap">
 
 
-            <div class="coin-face">
+        <img
+            src="gewinnercoin.png"
+            alt="
+                Printethub und
+                RecyclingFabrik
+                Gewinner Coin
+            "
+            class="coin-image"
+        >
 
 
-                <div class="coin-brand-top">
-
-                    Printet<span class="orange">Hub</span>
-
-                </div>
+    </div>
 
 
-                <div class="coin-trophy">
-                    🏆
-                </div>
+
+    <!-- =========================
+         GEWINNERNUMMER
+    ========================== -->
+
+    <div class="winner-info">
 
 
-                <div class="coin-winner">
-                    WINNER
-                </div>
+        <div class="winner-pill">
 
 
-                <div
-                    class="coin-number"
-                    id="coinNumber"
-                >
-                    01 / 05
-                </div>
-
-
-                <div class="coin-brand-bottom">
-                    RecyclingFabrik
-                </div>
-
-
+            <div class="trophy">
+                🏆
             </div>
 
 
-        </div>
-
-
-        <div class="pedestal"></div>
-
-
-
-        <!-- Gewinnernummer -->
-
-        <div class="winner-info">
-
-
-            <div class="winner-pill">
+            <div class="winner-text">
 
 
                 <div
@@ -1162,17 +934,17 @@
             </div>
 
 
-            <br>
+        </div>
 
 
-            <div
-                class="serial"
-                id="serial"
-            >
-                SE-001 / 005
-            </div>
+        <br>
 
 
+        <div
+            class="serial"
+            id="serial"
+        >
+            SE-001 / 005
         </div>
 
 
@@ -1180,13 +952,21 @@
 
 
 
-    <!-- GEWINNKARTE -->
+    <!-- =========================
+         GEWINNKARTE
+    ========================== -->
 
     <div class="prize-card">
 
 
         <div class="congrats">
-            Glückwunsch! ✨
+
+            Glückwunsch!
+
+            <span class="spark">
+                ✦
+            </span>
+
         </div>
 
 
@@ -1207,39 +987,43 @@
 
         <div class="rarity">
 
-            Von insgesamt
-
-            <strong>
-                100 Maker Coins
-            </strong>
-
-            besitzen nur
+            Nur
 
             <span class="orange">
-                5
+                5 von 100
             </span>
 
-            einen Gewinner-NFC-Tag.
+            Maker Coins sind
+            Gewinner-Coins.
 
         </div>
 
 
 
-        <!-- Filamentspule -->
+        <!-- FILAMENT -->
 
-        <div class="spool">
-
-
-            <div class="spool-core"></div>
+        <div class="spool-box">
 
 
-            <div class="spool-top"></div>
+            <div class="spool-glow"></div>
 
 
-            <div class="spool-bottom"></div>
+            <div class="spool">
 
 
-            <div class="spool-hole"></div>
+                <div class="filament"></div>
+
+
+                <div class="spool-top"></div>
+
+
+                <div class="spool-bottom"></div>
+
+
+                <div class="spool-hole"></div>
+
+
+            </div>
 
 
         </div>
@@ -1249,6 +1033,10 @@
         <!-- INFO -->
 
         <div class="info">
+
+            <span class="info-icon">
+                ⓘ
+            </span>
 
             Du hast einen der fünf
             <strong>
@@ -1275,7 +1063,7 @@
             onclick="toggleRedeem()"
         >
 
-            🎁 BEI RECYCLINGFABRIK EINLÖSEN
+            🎁 GEWINN EINLÖSEN
 
         </button>
 
@@ -1285,11 +1073,13 @@
 
         <div id="redeemDetails">
 
-            Zeige deinen
             <strong>
-                Gewinner-Coin
+                Einlösung bei der RecyclingFabrik
             </strong>
 
+            <br><br>
+
+            Zeige deinen Gewinner-Coin
             zusammen mit dieser Seite
             bei der RecyclingFabrik vor.
 
@@ -1299,15 +1089,18 @@
 
             <br>
 
-            <strong
+            <span
+                class="redeem-id"
                 id="redeemSerial"
             >
                 SE-001
-            </strong>
+            </span>
 
         </div>
 
 
+
+        <!-- FOOTER -->
 
         <div class="footer">
 
@@ -1331,11 +1124,12 @@
 
 
     /*
-        Nummer aus URL lesen:
+        NFC-Link:
 
         ?nr=1
         ?nr=2
-        ...
+        ?nr=3
+        ?nr=4
         ?nr=5
     */
 
@@ -1354,7 +1148,8 @@
 
 
     /*
-        Nur Werte von 1 bis 5 zulassen
+        Nur Nummern 1 bis 5
+        zulassen
     */
 
     if (nr < 1) {
@@ -1369,17 +1164,10 @@
 
 
     /*
-        Formatierungen
+        3-stellige Nummer
     */
 
-    const twoDigits =
-        String(nr).padStart(
-            2,
-            "0"
-        );
-
-
-    const threeDigits =
+    const formattedNumber =
         String(nr).padStart(
             3,
             "0"
@@ -1388,21 +1176,7 @@
 
 
     /*
-        Coin
-    */
-
-    document
-        .getElementById(
-            "coinNumber"
-        )
-        .textContent =
-        twoDigits +
-        " / 05";
-
-
-
-    /*
-        Gewinneranzeige
+        1 von 5
     */
 
     document
@@ -1416,7 +1190,7 @@
 
 
     /*
-        Seriennummer
+        SE-001 / 005
     */
 
     document
@@ -1425,14 +1199,14 @@
         )
         .textContent =
         "SE-" +
-        threeDigits +
+        formattedNumber +
         " / 005";
 
 
 
     /*
-        Seriennummer im
-        Einlösebereich
+        Gewinner-ID
+        im Einlösebereich
     */
 
     document
@@ -1441,30 +1215,30 @@
         )
         .textContent =
         "SE-" +
-        threeDigits;
+        formattedNumber;
 
 
 
     /*
         Einlösebereich
-        ein-/ausblenden
+        auf- und zuklappen
     */
 
     function toggleRedeem() {
 
 
-        const box =
+        const details =
             document.getElementById(
                 "redeemDetails"
             );
 
 
         if (
-            box.style.display ===
+            details.style.display ===
             "block"
         ) {
 
-            box.style.display =
+            details.style.display =
                 "none";
 
         }
@@ -1472,7 +1246,7 @@
 
         else {
 
-            box.style.display =
+            details.style.display =
                 "block";
 
         }
