@@ -1,557 +1,1150 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Gewinner Coin | Sonderedition</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Gewinner Coin | Sonderedition
+    </title>
+
 
     <style>
+
         * {
             box-sizing: border-box;
         }
 
+
+        html {
+            background: #050606;
+        }
+
+
         body {
             margin: 0;
+
             min-height: 100vh;
 
-            font-family: Arial, Helvetica, sans-serif;
+            padding: 18px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
             color: white;
 
             background:
-                radial-gradient(circle at 15% 15%,
-                    rgba(255, 120, 25, 0.18),
-                    transparent 32%),
 
-                radial-gradient(circle at 85% 75%,
-                    rgba(155, 255, 55, 0.16),
-                    transparent 32%),
+                radial-gradient(
+                    circle at 15% 10%,
+                    rgba(255, 125, 25, 0.18),
+                    transparent 30%
+                ),
 
-                #070808;
+                radial-gradient(
+                    circle at 85% 70%,
+                    rgba(135, 255, 65, 0.16),
+                    transparent 32%
+                ),
 
-            padding: 18px;
+                linear-gradient(
+                    180deg,
+                    #080909,
+                    #050606
+                );
         }
 
 
+
+        /* =========================
+           SEITE
+        ========================== */
+
         .page {
             width: 100%;
-            max-width: 460px;
+
+            max-width: 470px;
 
             margin: 0 auto;
         }
 
 
-        /* LOGOS */
+
+        /* =========================
+           LOGOS OBEN
+        ========================== */
 
         .logos {
-            display: flex;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr auto 1fr;
+
             align-items: center;
-            justify-content: center;
 
-            gap: 14px;
+            gap: 10px;
 
-            margin: 10px 0 26px;
+            margin:
+                6px
+                0
+                28px;
         }
+
 
         .logo-box {
-            flex: 1;
 
-            height: 72px;
+            height: 76px;
+
+            padding: 8px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
-            border-radius: 16px;
+            border-radius: 17px;
 
-            background: rgba(255,255,255,0.05);
+            background:
+                rgba(255,255,255,0.96);
 
-            border: 1px solid rgba(255,255,255,0.09);
+            border:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            overflow: hidden;
         }
 
+
         .logo-box img {
-            max-width: 92%;
-            max-height: 58px;
+
+            display: block;
+
+            width: 100%;
+
+            height: 100%;
 
             object-fit: contain;
         }
 
-        .recycling {
-            background: rgba(255,255,255,0.94);
-        }
 
         .cross {
-            font-size: 24px;
-            color: #aaa;
+
+            font-size: 25px;
+
+            font-weight: 300;
+
+            color: #9ca1a6;
         }
 
 
-        /* HERO */
+
+        /* =========================
+           TITEL
+        ========================== */
 
         .hero {
+
             text-align: center;
         }
 
+
         .edition {
-            font-size: 12px;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
             letter-spacing: 5px;
 
-            color: #ff9b35;
+            color: #ff9b37;
 
             margin-bottom: 10px;
         }
 
+
+        .edition-line {
+
+            width: 110px;
+
+            height: 2px;
+
+            margin:
+                0 auto
+                12px;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff8d2c,
+                    #a8ff58
+                );
+
+            box-shadow:
+                0 0 12px
+                rgba(255, 150, 40, 0.45);
+        }
+
+
         h1 {
+
             margin: 0;
 
-            font-size: 42px;
+            font-size: 41px;
+
             line-height: 1;
+
+            font-weight: 900;
 
             letter-spacing: 1px;
 
             background:
                 linear-gradient(
                     90deg,
-                    #ff8b2b,
-                    #ffe39c,
-                    #a5ff55
+                    #ff9130 0%,
+                    #ffc967 42%,
+                    #b8ff69 100%
                 );
 
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
 
-            text-shadow:
-                0 0 25px rgba(255,150,50,0.12);
+            -webkit-text-fill-color:
+                transparent;
         }
 
 
-        /* COIN */
 
-        .coin-area {
-            margin-top: 30px;
+        /* =========================
+           COIN BEREICH
+        ========================== */
+
+        .coin-stage {
+
+            position: relative;
+
+            margin:
+                30px
+                auto
+                0;
 
             text-align: center;
         }
 
+
+
+        /* Glow hinter dem Coin */
+
+        .coin-glow {
+
+            position: absolute;
+
+            width: 260px;
+
+            height: 260px;
+
+            left: 50%;
+
+            top: 0;
+
+            transform:
+                translateX(-50%);
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(255,120,25,0.25),
+                    rgba(130,255,55,0.20)
+                );
+
+            filter: blur(40px);
+
+            opacity: 0.65;
+
+            pointer-events: none;
+        }
+
+
+
+        /* EIGENTLICHER COIN */
+
         .coin {
-            width: 220px;
-            height: 220px;
+
+            position: relative;
+
+            width: 230px;
+
+            height: 230px;
 
             margin: 0 auto;
 
             border-radius: 50%;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 12px;
 
             background:
-                radial-gradient(circle at 35% 25%,
-                    #34373a,
-                    #111214 55%,
-                    #050606 100%);
 
-            border: 7px solid #b68a3a;
+                linear-gradient(
+                    145deg,
+                    #ffd36a,
+                    #6e4810 24%,
+                    #e2a83f 45%,
+                    #4b3008 62%,
+                    #ffca58
+                );
 
             box-shadow:
-                -15px 0 35px rgba(255,130,30,0.25),
-                15px 0 35px rgba(145,255,65,0.22),
-                inset 0 0 25px rgba(255,255,255,0.08);
+
+                -18px 0 35px
+                rgba(255, 126, 20, 0.25),
+
+                18px 0 35px
+                rgba(136, 255, 55, 0.22),
+
+                0 15px 35px
+                rgba(0,0,0,0.7);
         }
 
-        .coin-inner {
-            width: 176px;
-            height: 176px;
+
+
+        .coin-face {
+
+            width: 100%;
+
+            height: 100%;
 
             border-radius: 50%;
 
-            border: 2px solid rgba(255,255,255,0.15);
+            position: relative;
 
             display: flex;
+
             flex-direction: column;
 
             align-items: center;
+
             justify-content: center;
 
-            gap: 8px;
-        }
-
-        .coin-print {
-            font-size: 19px;
-            font-weight: bold;
-        }
-
-        .coin-print span {
-            color: #ff8f35;
-        }
-
-        .coin-icon {
-            font-size: 45px;
-        }
-
-        .coin-rf {
-            color: #9dff4c;
-
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-
-        /* GEWINNER NUMMER */
-
-        .winner {
-            margin-top: 26px;
-        }
-
-        .winner-pill {
-            display: inline-block;
-
-            padding: 12px 25px;
-
-            border-radius: 18px;
-
-            border: 1px solid rgba(255,220,130,0.6);
+            overflow: hidden;
 
             background:
-                rgba(255,255,255,0.04);
+
+                radial-gradient(
+                    circle at 35% 25%,
+                    #34383b,
+                    #121415 48%,
+                    #070808 78%
+                );
+
+            border:
+                2px solid
+                rgba(255,220,130,0.45);
 
             box-shadow:
-                0 0 18px rgba(255,160,40,0.13);
+
+                inset 0 0 30px
+                rgba(0,0,0,0.8),
+
+                inset -12px 0 22px
+                rgba(120,255,50,0.07),
+
+                inset 12px 0 22px
+                rgba(255,110,20,0.08);
         }
 
-        .winner-number {
-            font-size: 24px;
+
+
+        /* Coin-Ringe */
+
+        .coin-face::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 13px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(255, 208, 105, 0.30);
+
+            pointer-events: none;
+        }
+
+
+        .coin-face::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 22px;
+
+            border-radius: 50%;
+
+            border:
+                1px dashed
+                rgba(255,255,255,0.10);
+
+            pointer-events: none;
+        }
+
+
+
+        /* Coin Inhalt */
+
+        .coin-brand-top {
+
+            position: relative;
+
+            z-index: 2;
+
+            font-size: 20px;
+
             font-weight: 900;
+
+            letter-spacing: 0.5px;
+
+            margin-bottom: 7px;
         }
 
-        .winner-label {
-            margin-top: 3px;
 
-            font-size: 10px;
+        .coin-brand-top .orange {
 
-            letter-spacing: 3px;
-
-            color: #bbb;
+            color: #ff963b;
         }
 
-        .serial {
-            margin-top: 10px;
 
-            display: inline-block;
+        .coin-trophy {
 
-            padding: 7px 14px;
+            position: relative;
 
-            border-radius: 10px;
+            z-index: 2;
 
-            border: 1px solid rgba(255,255,255,0.12);
+            font-size: 43px;
 
-            background: rgba(0,0,0,0.35);
+            line-height: 1;
 
-            font-family: monospace;
+            margin:
+                3px
+                0
+                4px;
 
-            color: #ccc;
+            filter:
+                drop-shadow(
+                    0 0 9px
+                    rgba(255,190,60,0.4)
+                );
+        }
+
+
+        .coin-winner {
+
+            position: relative;
+
+            z-index: 2;
+
+            color: #ffffff;
+
+            font-size: 15px;
+
+            font-weight: 900;
 
             letter-spacing: 2px;
         }
 
 
-        /* GEWINNKARTE */
+        .coin-number {
 
-        .prize-card {
-            margin-top: 28px;
+            position: relative;
 
-            padding: 28px 20px;
+            z-index: 2;
 
-            border-radius: 28px;
+            margin-top: 4px;
+
+            color: #a8ff54;
+
+            font-size: 24px;
+
+            font-weight: 900;
+
+            text-shadow:
+                0 0 10px
+                rgba(155,255,70,0.55);
+        }
+
+
+        .coin-brand-bottom {
+
+            position: relative;
+
+            z-index: 2;
+
+            margin-top: 7px;
+
+            color: #9dff52;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+
+
+        /* Sockel */
+
+        .pedestal {
+
+            width: 260px;
+
+            height: 19px;
+
+            margin:
+                -5px
+                auto
+                0;
+
+            border-radius: 50%;
 
             background:
                 linear-gradient(
-                    145deg,
-                    rgba(255,135,30,0.07),
-                    rgba(155,255,70,0.06)
-                ),
-                #111314;
-
-            border: 1px solid rgba(155,255,70,0.28);
+                    90deg,
+                    #ff842b,
+                    #64542d,
+                    #98ff4d
+                );
 
             box-shadow:
-                -15px 0 35px rgba(255,125,25,0.10),
-                15px 0 35px rgba(150,255,65,0.10);
+                0 0 20px
+                rgba(165,255,75,0.18);
+        }
+
+
+
+        /* =========================
+           1 VON 5
+        ========================== */
+
+        .winner-info {
+
+            margin-top: 23px;
 
             text-align: center;
         }
 
-        .congrats {
-            font-size: 38px;
-            font-weight: 900;
 
-            margin-bottom: 12px;
+        .winner-pill {
+
+            display: inline-block;
+
+            min-width: 150px;
+
+            padding:
+                12px
+                22px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,0.035);
+
+            border:
+                1px solid
+                rgba(255,207,105,0.55);
+
+            box-shadow:
+                0 0 20px
+                rgba(255,145,40,0.12);
         }
+
+
+        .winner-number {
+
+            font-size: 23px;
+
+            font-weight: 900;
+        }
+
+
+        .winner-label {
+
+            margin-top: 3px;
+
+            color: #aeb3b7;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+        }
+
+
+        .serial {
+
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding:
+                7px
+                15px;
+
+            border-radius: 10px;
+
+            background:
+                rgba(0,0,0,0.38);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            color: #d4d8db;
+
+            font-family: monospace;
+
+            font-size: 14px;
+
+            letter-spacing: 2px;
+        }
+
+
+
+        /* =========================
+           GEWINNKARTE
+        ========================== */
+
+        .prize-card {
+
+            margin-top: 26px;
+
+            padding:
+                27px
+                19px
+                22px;
+
+            text-align: center;
+
+            border-radius: 26px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(255,130,30,0.06),
+                    rgba(145,255,65,0.055)
+                ),
+
+                rgba(17,19,20,0.97);
+
+            border:
+                1px solid
+                rgba(155,255,70,0.25);
+
+            box-shadow:
+
+                -12px 0 28px
+                rgba(255,120,25,0.08),
+
+                12px 0 28px
+                rgba(140,255,60,0.08);
+        }
+
+
+        .congrats {
+
+            margin: 0;
+
+            font-size: 37px;
+
+            font-weight: 900;
+        }
+
 
         .prize-text {
+
+            margin-top: 11px;
+
             font-size: 21px;
 
-            line-height: 1.4;
-
             font-weight: 700;
+
+            line-height: 1.4;
         }
+
 
         .green {
-            color: #a3ff55;
+
+            color: #a6ff59;
+
+            text-shadow:
+                0 0 8px
+                rgba(150,255,70,0.25);
         }
+
 
         .orange {
-            color: #ff9638;
+
+            color: #ff983c;
         }
+
 
         .rarity {
-            margin-top: 12px;
 
-            color: #aeb4ba;
+            margin-top: 11px;
 
-            font-size: 15px;
+            color: #b2b8bd;
+
+            font-size: 14px;
+
+            line-height: 1.5;
         }
 
 
-        /* FILAMENT */
+
+        /* =========================
+           FILAMENTSPULE
+        ========================== */
 
         .spool {
-            margin: 25px auto 0;
 
             width: 150px;
-            height: 90px;
+
+            height: 105px;
+
+            margin:
+                24px
+                auto
+                4px;
 
             position: relative;
         }
 
+
+        .spool-core {
+
+            position: absolute;
+
+            width: 112px;
+
+            height: 72px;
+
+            left: 19px;
+
+            top: 16px;
+
+            border-radius: 8px;
+
+            background:
+
+                repeating-linear-gradient(
+                    0deg,
+                    #69ca27,
+                    #69ca27 4px,
+                    #a0f64e 5px,
+                    #a0f64e 8px
+                );
+
+            box-shadow:
+                0 0 22px
+                rgba(130,255,55,0.3);
+        }
+
+
         .spool-top,
         .spool-bottom {
+
             position: absolute;
 
             width: 150px;
-            height: 25px;
+
+            height: 30px;
 
             left: 0;
 
             border-radius: 50%;
 
             background:
-                linear-gradient(#383c3f, #111);
+                radial-gradient(
+                    ellipse,
+                    #404548 0%,
+                    #191b1c 58%,
+                    #080909 100%
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.13);
         }
+
 
         .spool-top {
             top: 0;
         }
 
+
         .spool-bottom {
             bottom: 0;
         }
 
-        .filament {
+
+        .spool-hole {
+
             position: absolute;
 
-            width: 115px;
-            height: 58px;
+            z-index: 3;
 
-            left: 18px;
-            top: 16px;
+            width: 32px;
 
-            border-radius: 8px;
+            height: 32px;
 
-            background:
-                repeating-linear-gradient(
-                    0deg,
-                    #7de52c,
-                    #7de52c 4px,
-                    #a5ff59 5px,
-                    #a5ff59 7px
-                );
+            border-radius: 50%;
 
-            box-shadow:
-                0 0 20px rgba(145,255,70,0.35);
+            background: #090a0a;
+
+            border:
+                5px solid
+                #303436;
+
+            left: 59px;
+
+            top: 0;
         }
 
 
-        /* INFO */
+
+        /* =========================
+           EINLÖSEINFO
+        ========================== */
 
         .info {
-            margin-top: 22px;
 
-            padding: 18px;
+            margin-top: 23px;
+
+            padding:
+                17px
+                16px;
 
             border-radius: 18px;
 
-            background: rgba(255,255,255,0.035);
+            text-align: left;
 
-            border: 1px solid rgba(255,255,255,0.08);
-
-            color: #d5d9dd;
+            color: #d8dcdf;
 
             font-size: 15px;
 
             line-height: 1.5;
+
+            background:
+                rgba(255,255,255,0.035);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
         }
 
 
-        /* BUTTON */
+        .info strong {
+
+            color: #a5ff58;
+        }
+
+
+
+        /* =========================
+           BUTTON
+        ========================== */
 
         .redeem {
+
             width: 100%;
 
             margin-top: 20px;
 
-            padding: 17px;
+            padding:
+                17px
+                12px;
 
             border: none;
 
             border-radius: 18px;
 
-            font-size: 18px;
-            font-weight: 900;
-
             cursor: pointer;
 
-            color: #111;
+            font-size: 17px;
+
+            font-weight: 900;
+
+            letter-spacing: 0.5px;
+
+            color: #101210;
 
             background:
+
                 linear-gradient(
                     90deg,
-                    #ff9437,
-                    #ffe780,
-                    #a1ff57
+                    #ff9236,
+                    #ffd069 43%,
+                    #9dff51
                 );
 
             box-shadow:
-                0 0 25px rgba(180,255,80,0.20);
+                0 0 24px
+                rgba(155,255,75,0.18);
         }
 
 
-        .footer {
-            text-align: center;
+        .redeem:active {
 
-            margin: 18px 0 6px;
-
-            color: #666d72;
-
-            font-size: 10px;
-
-            letter-spacing: 3px;
+            transform:
+                scale(0.98);
         }
 
 
-        #contact {
+
+        /* =========================
+           EINLÖSEDETAILS
+        ========================== */
+
+        #redeemDetails {
+
             display: none;
 
             margin-top: 15px;
 
-            padding: 16px;
+            padding:
+                17px
+                15px;
 
-            border-radius: 16px;
+            border-radius: 17px;
 
-            background: rgba(150,255,80,0.08);
+            color: #e3e6e8;
 
-            border: 1px solid rgba(150,255,80,0.22);
+            font-size: 14px;
 
-            line-height: 1.5;
+            line-height: 1.55;
+
+            background:
+                rgba(140,255,65,0.07);
+
+            border:
+                1px solid
+                rgba(145,255,65,0.22);
         }
 
+
+        #redeemDetails strong {
+
+            color: #a6ff59;
+        }
+
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        .footer {
+
+            margin:
+                20px
+                0
+                4px;
+
+            text-align: center;
+
+            color: #686e72;
+
+            font-size: 9px;
+
+            letter-spacing: 2.5px;
+
+            line-height: 1.8;
+        }
+
+
+
+        /* =========================
+           KLEINE HANDYS
+        ========================== */
 
         @media (max-width: 390px) {
 
-            h1 {
-                font-size: 36px;
+            body {
+                padding: 13px;
             }
+
+
+            .logo-box {
+                height: 65px;
+            }
+
+
+            h1 {
+                font-size: 35px;
+            }
+
 
             .coin {
-                width: 190px;
-                height: 190px;
+                width: 205px;
+                height: 205px;
             }
 
-            .coin-inner {
-                width: 150px;
-                height: 150px;
+
+            .pedestal {
+                width: 230px;
             }
+
 
             .congrats {
-                font-size: 34px;
+                font-size: 32px;
             }
+
         }
 
     </style>
+
 </head>
+
 
 
 <body>
 
+
 <div class="page">
 
 
+
+    <!-- LOGOS -->
+
     <div class="logos">
 
+
         <div class="logo-box">
+
             <img
-                src="printethub.jpg"
-                alt="Printethub"
+                src="printethub.jpeg"
+                alt="Printethub Logo"
             >
+
         </div>
+
+
 
         <div class="cross">
             ×
         </div>
 
-        <div class="logo-box recycling">
+
+
+        <div class="logo-box">
+
             <img
-                src="recyclingfabrik.jpg"
-                alt="RecyclingFabrik"
+                src="recyclingfabrik.jpeg"
+                alt="RecyclingFabrik Logo"
             >
+
         </div>
+
 
     </div>
 
 
 
+    <!-- HERO -->
+
     <div class="hero">
+
 
         <div class="edition">
             SONDEREDITION
         </div>
 
+
+        <div class="edition-line"></div>
+
+
         <h1>
             GEWINNER COIN
         </h1>
+
 
     </div>
 
 
 
-    <div class="coin-area">
+    <!-- COIN -->
+
+    <div class="coin-stage">
+
+
+        <div class="coin-glow"></div>
+
 
         <div class="coin">
 
-            <div class="coin-inner">
 
-                <div class="coin-print">
-                    Printet<span>Hub</span>
+            <div class="coin-face">
+
+
+                <div class="coin-brand-top">
+
+                    Printet<span class="orange">Hub</span>
+
                 </div>
 
-                <div class="coin-icon">
+
+                <div class="coin-trophy">
                     🏆
                 </div>
 
-                <div class="coin-rf">
+
+                <div class="coin-winner">
+                    WINNER
+                </div>
+
+
+                <div
+                    class="coin-number"
+                    id="coinNumber"
+                >
+                    01 / 05
+                </div>
+
+
+                <div class="coin-brand-bottom">
                     RecyclingFabrik
                 </div>
 
+
             </div>
+
 
         </div>
 
 
+        <div class="pedestal"></div>
 
-        <div class="winner">
+
+
+        <!-- Gewinnernummer -->
+
+        <div class="winner-info">
+
 
             <div class="winner-pill">
+
 
                 <div
                     class="winner-number"
@@ -560,13 +1153,17 @@
                     1 von 5
                 </div>
 
+
                 <div class="winner-label">
                     GEWINNER COINS
                 </div>
 
+
             </div>
 
+
             <br>
+
 
             <div
                 class="serial"
@@ -575,17 +1172,23 @@
                 SE-001 / 005
             </div>
 
+
         </div>
+
 
     </div>
 
 
 
+    <!-- GEWINNKARTE -->
+
     <div class="prize-card">
+
 
         <div class="congrats">
             Glückwunsch! ✨
         </div>
+
 
 
         <div class="prize-text">
@@ -601,66 +1204,104 @@
         </div>
 
 
+
         <div class="rarity">
-            Nur
-            <span class="orange">5</span>
-            von
-            <strong>100</strong>
-            Maker Coins sind Gewinner-Coins.
+
+            Von insgesamt
+
+            <strong>
+                100 Maker Coins
+            </strong>
+
+            besitzen nur
+
+            <span class="orange">
+                5
+            </span>
+
+            einen Gewinner-NFC-Tag.
+
         </div>
 
 
+
+        <!-- Filamentspule -->
 
         <div class="spool">
 
-            <div class="filament"></div>
+
+            <div class="spool-core"></div>
+
 
             <div class="spool-top"></div>
 
+
             <div class="spool-bottom"></div>
+
+
+            <div class="spool-hole"></div>
+
 
         </div>
 
 
+
+        <!-- INFO -->
 
         <div class="info">
 
             Du hast einen der fünf
-            <strong>besonderen NFC-Coins</strong>
+            <strong>
+                besonderen Gewinner-Coins
+            </strong>
             erwischt.
 
             <br><br>
 
-            Melde dich bei
-            <strong>Printethub</strong>
-            oder
-            <strong>RecyclingFabrik</strong>,
-            um deine Filamentrolle einzulösen.
+            Deine Filamentrolle kannst du
+            <strong>
+                ausschließlich bei der RecyclingFabrik
+            </strong>
+            einlösen.
 
         </div>
 
 
 
+        <!-- BUTTON -->
+
         <button
             class="redeem"
-            onclick="showContact()"
+            onclick="toggleRedeem()"
         >
-            🎁 GEWINN EINLÖSEN
+
+            🎁 BEI RECYCLINGFABRIK EINLÖSEN
+
         </button>
 
 
 
-        <div id="contact">
+        <!-- EINLÖSEDETAILS -->
 
-            Zeige diesen Gewinner-Coin
-            zusammen mit dieser Seite bei
-            Printethub oder RecyclingFabrik vor.
+        <div id="redeemDetails">
+
+            Zeige deinen
+            <strong>
+                Gewinner-Coin
+            </strong>
+
+            zusammen mit dieser Seite
+            bei der RecyclingFabrik vor.
 
             <br><br>
 
             Deine Gewinner-ID:
 
-            <strong id="contactSerial">
+            <br>
+
+            <strong
+                id="redeemSerial"
+            >
                 SE-001
             </strong>
 
@@ -669,18 +1310,35 @@
 
 
         <div class="footer">
+
             PRINTETHUB × RECYCLINGFABRIK
-            <br><br>
+
+            <br>
+
             LIMITED EVENT EDITION
+
         </div>
 
+
     </div>
+
 
 </div>
 
 
 
 <script>
+
+
+    /*
+        Nummer aus URL lesen:
+
+        ?nr=1
+        ?nr=2
+        ...
+        ?nr=5
+    */
+
 
     const params =
         new URLSearchParams(
@@ -694,29 +1352,72 @@
         ) || 1;
 
 
+
+    /*
+        Nur Werte von 1 bis 5 zulassen
+    */
+
     if (nr < 1) {
         nr = 1;
     }
+
 
     if (nr > 5) {
         nr = 5;
     }
 
 
-    const formatted =
+
+    /*
+        Formatierungen
+    */
+
+    const twoDigits =
+        String(nr).padStart(
+            2,
+            "0"
+        );
+
+
+    const threeDigits =
         String(nr).padStart(
             3,
             "0"
         );
 
 
+
+    /*
+        Coin
+    */
+
+    document
+        .getElementById(
+            "coinNumber"
+        )
+        .textContent =
+        twoDigits +
+        " / 05";
+
+
+
+    /*
+        Gewinneranzeige
+    */
+
     document
         .getElementById(
             "winnerNumber"
         )
         .textContent =
-        nr + " von 5";
+        nr +
+        " von 5";
 
+
+
+    /*
+        Seriennummer
+    */
 
     document
         .getElementById(
@@ -724,48 +1425,64 @@
         )
         .textContent =
         "SE-" +
-        formatted +
+        threeDigits +
         " / 005";
 
 
+
+    /*
+        Seriennummer im
+        Einlösebereich
+    */
+
     document
         .getElementById(
-            "contactSerial"
+            "redeemSerial"
         )
         .textContent =
         "SE-" +
-        formatted;
+        threeDigits;
 
 
 
-    function showContact() {
+    /*
+        Einlösebereich
+        ein-/ausblenden
+    */
 
-        const contact =
+    function toggleRedeem() {
+
+
+        const box =
             document.getElementById(
-                "contact"
+                "redeemDetails"
             );
 
 
         if (
-            contact.style.display
-            ===
+            box.style.display ===
             "block"
         ) {
 
-            contact.style.display =
+            box.style.display =
                 "none";
 
-        } else {
+        }
 
-            contact.style.display =
+
+        else {
+
+            box.style.display =
                 "block";
 
         }
 
     }
 
+
 </script>
 
 
 </body>
+
 </html>
