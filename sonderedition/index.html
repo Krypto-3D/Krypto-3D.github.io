@@ -3,10 +3,769 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonderedition</title>
+
+    <title>Gewinner Coin | Sonderedition</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            color: white;
+
+            background:
+                radial-gradient(circle at 15% 15%,
+                    rgba(255, 120, 25, 0.18),
+                    transparent 32%),
+
+                radial-gradient(circle at 85% 75%,
+                    rgba(155, 255, 55, 0.16),
+                    transparent 32%),
+
+                #070808;
+
+            padding: 18px;
+        }
+
+
+        .page {
+            width: 100%;
+            max-width: 460px;
+
+            margin: 0 auto;
+        }
+
+
+        /* LOGOS */
+
+        .logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 14px;
+
+            margin: 10px 0 26px;
+        }
+
+        .logo-box {
+            flex: 1;
+
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 16px;
+
+            background: rgba(255,255,255,0.05);
+
+            border: 1px solid rgba(255,255,255,0.09);
+        }
+
+        .logo-box img {
+            max-width: 92%;
+            max-height: 58px;
+
+            object-fit: contain;
+        }
+
+        .recycling {
+            background: rgba(255,255,255,0.94);
+        }
+
+        .cross {
+            font-size: 24px;
+            color: #aaa;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+        }
+
+        .edition {
+            font-size: 12px;
+            letter-spacing: 5px;
+
+            color: #ff9b35;
+
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0;
+
+            font-size: 42px;
+            line-height: 1;
+
+            letter-spacing: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff8b2b,
+                    #ffe39c,
+                    #a5ff55
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            text-shadow:
+                0 0 25px rgba(255,150,50,0.12);
+        }
+
+
+        /* COIN */
+
+        .coin-area {
+            margin-top: 30px;
+
+            text-align: center;
+        }
+
+        .coin {
+            width: 220px;
+            height: 220px;
+
+            margin: 0 auto;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                radial-gradient(circle at 35% 25%,
+                    #34373a,
+                    #111214 55%,
+                    #050606 100%);
+
+            border: 7px solid #b68a3a;
+
+            box-shadow:
+                -15px 0 35px rgba(255,130,30,0.25),
+                15px 0 35px rgba(145,255,65,0.22),
+                inset 0 0 25px rgba(255,255,255,0.08);
+        }
+
+        .coin-inner {
+            width: 176px;
+            height: 176px;
+
+            border-radius: 50%;
+
+            border: 2px solid rgba(255,255,255,0.15);
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+        }
+
+        .coin-print {
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .coin-print span {
+            color: #ff8f35;
+        }
+
+        .coin-icon {
+            font-size: 45px;
+        }
+
+        .coin-rf {
+            color: #9dff4c;
+
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+
+        /* GEWINNER NUMMER */
+
+        .winner {
+            margin-top: 26px;
+        }
+
+        .winner-pill {
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            border-radius: 18px;
+
+            border: 1px solid rgba(255,220,130,0.6);
+
+            background:
+                rgba(255,255,255,0.04);
+
+            box-shadow:
+                0 0 18px rgba(255,160,40,0.13);
+        }
+
+        .winner-number {
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        .winner-label {
+            margin-top: 3px;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            color: #bbb;
+        }
+
+        .serial {
+            margin-top: 10px;
+
+            display: inline-block;
+
+            padding: 7px 14px;
+
+            border-radius: 10px;
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            background: rgba(0,0,0,0.35);
+
+            font-family: monospace;
+
+            color: #ccc;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* GEWINNKARTE */
+
+        .prize-card {
+            margin-top: 28px;
+
+            padding: 28px 20px;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,135,30,0.07),
+                    rgba(155,255,70,0.06)
+                ),
+                #111314;
+
+            border: 1px solid rgba(155,255,70,0.28);
+
+            box-shadow:
+                -15px 0 35px rgba(255,125,25,0.10),
+                15px 0 35px rgba(150,255,65,0.10);
+
+            text-align: center;
+        }
+
+        .congrats {
+            font-size: 38px;
+            font-weight: 900;
+
+            margin-bottom: 12px;
+        }
+
+        .prize-text {
+            font-size: 21px;
+
+            line-height: 1.4;
+
+            font-weight: 700;
+        }
+
+        .green {
+            color: #a3ff55;
+        }
+
+        .orange {
+            color: #ff9638;
+        }
+
+        .rarity {
+            margin-top: 12px;
+
+            color: #aeb4ba;
+
+            font-size: 15px;
+        }
+
+
+        /* FILAMENT */
+
+        .spool {
+            margin: 25px auto 0;
+
+            width: 150px;
+            height: 90px;
+
+            position: relative;
+        }
+
+        .spool-top,
+        .spool-bottom {
+            position: absolute;
+
+            width: 150px;
+            height: 25px;
+
+            left: 0;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(#383c3f, #111);
+        }
+
+        .spool-top {
+            top: 0;
+        }
+
+        .spool-bottom {
+            bottom: 0;
+        }
+
+        .filament {
+            position: absolute;
+
+            width: 115px;
+            height: 58px;
+
+            left: 18px;
+            top: 16px;
+
+            border-radius: 8px;
+
+            background:
+                repeating-linear-gradient(
+                    0deg,
+                    #7de52c,
+                    #7de52c 4px,
+                    #a5ff59 5px,
+                    #a5ff59 7px
+                );
+
+            box-shadow:
+                0 0 20px rgba(145,255,70,0.35);
+        }
+
+
+        /* INFO */
+
+        .info {
+            margin-top: 22px;
+
+            padding: 18px;
+
+            border-radius: 18px;
+
+            background: rgba(255,255,255,0.035);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            color: #d5d9dd;
+
+            font-size: 15px;
+
+            line-height: 1.5;
+        }
+
+
+        /* BUTTON */
+
+        .redeem {
+            width: 100%;
+
+            margin-top: 20px;
+
+            padding: 17px;
+
+            border: none;
+
+            border-radius: 18px;
+
+            font-size: 18px;
+            font-weight: 900;
+
+            cursor: pointer;
+
+            color: #111;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff9437,
+                    #ffe780,
+                    #a1ff57
+                );
+
+            box-shadow:
+                0 0 25px rgba(180,255,80,0.20);
+        }
+
+
+        .footer {
+            text-align: center;
+
+            margin: 18px 0 6px;
+
+            color: #666d72;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+        }
+
+
+        #contact {
+            display: none;
+
+            margin-top: 15px;
+
+            padding: 16px;
+
+            border-radius: 16px;
+
+            background: rgba(150,255,80,0.08);
+
+            border: 1px solid rgba(150,255,80,0.22);
+
+            line-height: 1.5;
+        }
+
+
+        @media (max-width: 390px) {
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .coin {
+                width: 190px;
+                height: 190px;
+            }
+
+            .coin-inner {
+                width: 150px;
+                height: 150px;
+            }
+
+            .congrats {
+                font-size: 34px;
+            }
+        }
+
+    </style>
 </head>
 
+
 <body>
-    <h1>Sonderedition funktioniert 🎉</h1>
+
+<div class="page">
+
+
+    <div class="logos">
+
+        <div class="logo-box">
+            <img
+                src="printethub.jpg"
+                alt="Printethub"
+            >
+        </div>
+
+        <div class="cross">
+            ×
+        </div>
+
+        <div class="logo-box recycling">
+            <img
+                src="recyclingfabrik.jpg"
+                alt="RecyclingFabrik"
+            >
+        </div>
+
+    </div>
+
+
+
+    <div class="hero">
+
+        <div class="edition">
+            SONDEREDITION
+        </div>
+
+        <h1>
+            GEWINNER COIN
+        </h1>
+
+    </div>
+
+
+
+    <div class="coin-area">
+
+        <div class="coin">
+
+            <div class="coin-inner">
+
+                <div class="coin-print">
+                    Printet<span>Hub</span>
+                </div>
+
+                <div class="coin-icon">
+                    🏆
+                </div>
+
+                <div class="coin-rf">
+                    RecyclingFabrik
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="winner">
+
+            <div class="winner-pill">
+
+                <div
+                    class="winner-number"
+                    id="winnerNumber"
+                >
+                    1 von 5
+                </div>
+
+                <div class="winner-label">
+                    GEWINNER COINS
+                </div>
+
+            </div>
+
+            <br>
+
+            <div
+                class="serial"
+                id="serial"
+            >
+                SE-001 / 005
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="prize-card">
+
+        <div class="congrats">
+            Glückwunsch! ✨
+        </div>
+
+
+        <div class="prize-text">
+
+            Du hast
+
+            <span class="green">
+                1 Rolle Filament
+            </span>
+
+            gewonnen.
+
+        </div>
+
+
+        <div class="rarity">
+            Nur
+            <span class="orange">5</span>
+            von
+            <strong>100</strong>
+            Maker Coins sind Gewinner-Coins.
+        </div>
+
+
+
+        <div class="spool">
+
+            <div class="filament"></div>
+
+            <div class="spool-top"></div>
+
+            <div class="spool-bottom"></div>
+
+        </div>
+
+
+
+        <div class="info">
+
+            Du hast einen der fünf
+            <strong>besonderen NFC-Coins</strong>
+            erwischt.
+
+            <br><br>
+
+            Melde dich bei
+            <strong>Printethub</strong>
+            oder
+            <strong>RecyclingFabrik</strong>,
+            um deine Filamentrolle einzulösen.
+
+        </div>
+
+
+
+        <button
+            class="redeem"
+            onclick="showContact()"
+        >
+            🎁 GEWINN EINLÖSEN
+        </button>
+
+
+
+        <div id="contact">
+
+            Zeige diesen Gewinner-Coin
+            zusammen mit dieser Seite bei
+            Printethub oder RecyclingFabrik vor.
+
+            <br><br>
+
+            Deine Gewinner-ID:
+
+            <strong id="contactSerial">
+                SE-001
+            </strong>
+
+        </div>
+
+
+
+        <div class="footer">
+            PRINTETHUB × RECYCLINGFABRIK
+            <br><br>
+            LIMITED EVENT EDITION
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    let nr =
+        parseInt(
+            params.get("nr")
+        ) || 1;
+
+
+    if (nr < 1) {
+        nr = 1;
+    }
+
+    if (nr > 5) {
+        nr = 5;
+    }
+
+
+    const formatted =
+        String(nr).padStart(
+            3,
+            "0"
+        );
+
+
+    document
+        .getElementById(
+            "winnerNumber"
+        )
+        .textContent =
+        nr + " von 5";
+
+
+    document
+        .getElementById(
+            "serial"
+        )
+        .textContent =
+        "SE-" +
+        formatted +
+        " / 005";
+
+
+    document
+        .getElementById(
+            "contactSerial"
+        )
+        .textContent =
+        "SE-" +
+        formatted;
+
+
+
+    function showContact() {
+
+        const contact =
+            document.getElementById(
+                "contact"
+            );
+
+
+        if (
+            contact.style.display
+            ===
+            "block"
+        ) {
+
+            contact.style.display =
+                "none";
+
+        } else {
+
+            contact.style.display =
+                "block";
+
+        }
+
+    }
+
+</script>
+
+
 </body>
 </html>
